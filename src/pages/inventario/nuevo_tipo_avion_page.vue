@@ -252,7 +252,7 @@
         <q-input
         filled
         type="number"
-        v-model="combustibletotal"
+        v-model="combustibleTotal"
         label="Total combustible"
         lazy-rules
         :rules="[
@@ -444,7 +444,7 @@
         filled
         type="number"
         v-model="distanciaDespegue"
-        label="Costo operación"
+        label="Distancia de despegue"
         lazy-rules
         :rules="[
           val => val !== null && val !== '' || 'Ingresa cantidad',
@@ -506,12 +506,62 @@ export default {
          const $q = useQuasar()
 
     
-    const age = ref(null)
-    const abreviacion = ref(null)
-    const accept = ref(false)
+        const abreviacion = ref(null)
+        const jet = ref(null)
+        const motores = ref(null)
+        const pasajeros = ref(null)
+        const combustible = ref(null)
+        const autonomia = ref(null)
+        const alto = ref(null)
+        const velocidad = ref(null)
+        const distanciaAterrizaje = ref(null)
+        const nominativo = ref(null)
+        const peso = ref(null)
+        const carga = ref(null)
+        const combustibleTotal = ref(null)
+        const largo = ref(null)
+        const diametro = ref(null)
+        const techo = ref(null)
+        const costo = ref(null)
+        const descripcion = ref(null)
+        const capacidadCarga = ref(null)
+        const combustibleExterno = ref(null)
+        const potencia = ref(null)
+        const ancho = ref(null)
+        const velocidadCrucero = ref(null)
+        const distanciaDespegue = ref(null)
+        const tripulantesNumero = ref(null)
+        const tripulantesDescripcion = ref(null)
+
+        const accept = ref(false)
     return {
-        abreviacion,
-      age,
+      abreviacion,
+      jet,
+      motores,
+      pasajeros,
+      combustible,
+      autonomia,
+      alto,
+      velocidad,
+      distanciaAterrizaje,
+      nominativo,
+      peso,
+      carga,
+      combustibleTotal,
+      largo,
+      diametro,
+      techo,
+      costo,
+      descripcion,
+      capacidadCarga,
+      combustibleExterno,
+      potencia,
+      ancho,
+      velocidadCrucero,
+      distanciaDespegue,
+      tripulantesNumero,
+      tripulantesDescripcion,
+      
       accept,
        onSubmit () {
         if (accept.value !== true) {
@@ -519,7 +569,7 @@ export default {
             color: 'red-5',
             textColor: 'white',
             icon: 'warning',
-            message: 'You need to accept the license and terms first'
+            message: 'Debes completar todos los campos'
           })
         }
         else {
@@ -532,8 +582,6 @@ export default {
         }
       },
        onReset () {
-        name.value = null
-        age.value = null
         accept.value = false
       }
 
